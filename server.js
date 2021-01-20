@@ -74,13 +74,16 @@ app.get("/api/tables/:table", function(req,res) {
 app.post("/api/tables", function(req, res) {
 
     let newTable = req.body;
-  
-    console.log(newTable);
-  
-    tables.push(newTable);
-  
-    res.json(newTable);
 
+    console.log(newTable);
+
+    if(tables.length === 5) {
+        waitList.push(newTable);
+    } else {
+        tables.push(newTable);
+    }
+
+    res.json(newTable);
 });
 
 // LISTENER
