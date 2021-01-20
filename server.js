@@ -27,6 +27,8 @@ let tables = [
     },
 ];
 
+let waitList = [];
+
 // ROUTES
 // Home
 app.get("/", function(req, res) {
