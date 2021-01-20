@@ -45,6 +45,18 @@ app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
+// Handle users entering reservations - JSON input
+app.post("/tables", function(req, res) {
+
+  let newtable = req.body
+
+  console.log(newtable);
+
+  tables.push(newtable);
+
+  res.json(newtable);
+});
+
 // LISTENER
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
