@@ -4,6 +4,7 @@ var path = require('path');
 const app = express();
 const PORT = 3000;
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // DATA
@@ -68,6 +69,19 @@ app.get("/api/tables/:table", function(req,res) {
         }
     }
 })
+
+// Handle users entering reservations - JSON input
+app.post("/api/tables", function(req, res) {
+
+    let newTable = req.body;
+  
+    console.log(newTable);
+  
+    tables.push(newTable);
+  
+    res.json(newTable);
+
+});
 
 // LISTENER
 app.listen(PORT, function() {
