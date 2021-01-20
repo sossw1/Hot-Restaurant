@@ -1,4 +1,5 @@
 const express = require('express');
+var path = require('path');
 
 const app = express();
 const PORT = 3000;
@@ -29,17 +30,17 @@ let tables = [
 // ROUTES
 // Home
 app.get("/", function(req, res) {
-    res.send("Home");
+    res.sendFile(path.join(__dirname, "home.html"));
 });
 
 // Reserve
 app.get("/reserve", function(req, res) {
-    res.send("Reserve");
+    res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
 // Tables
 app.get("/tables", function(req, res) {
-    res.send("Tables");
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 // LISTENER
