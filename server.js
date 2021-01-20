@@ -4,7 +4,25 @@ const app = express();
 const PORT = 3000;
 
 // DATA
-let tables = [];
+let tables = [
+    {
+        name: "Bill",
+        phone: 1111111111,
+        email: "bill@email.com",
+        id: 101
+    },
+    {
+        name: "Delphine",
+        phone: 2222222222,
+        email: "delphine@email.com",
+        id: 102
+    },    {
+        name: "Mike",
+        phone: 3333333333,
+        email: "mike@email.com",
+        id: 103
+    },
+];
 
 // ROUTES
 // Home
