@@ -79,11 +79,11 @@ app.post("/api/tables", function(req, res) {
 
     if(tables.length === 5) {
         waitList.push(newTable);
+        res.json(false);
     } else {
         tables.push(newTable);
+        res.json(true);
     }
-
-    res.json(newTable);
 });
 
 // LISTENER
